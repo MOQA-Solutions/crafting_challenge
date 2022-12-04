@@ -9,14 +9,12 @@
 -export([code_change/3]).
 -export([terminate/2]).
 
-%%========  Application API  ========%%  
 
 -export([sort_example/0]).
 -export([script_example/0]).
 -export([sort/1]).
 -export([script/1]).
 
-%%===================================%%
 
 -include("../include/crafting_challenge_data.hrl").
 
