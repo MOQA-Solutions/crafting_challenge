@@ -19,7 +19,7 @@ cd crafting_challenge
 rebar3 shell
 1> crafting_challenge:sort_example().
 %%%% Result %%%%
-2> crafting_example:script_example().
+2> crafting_challenge:script_example().
 %%%% Result %%%%
 3> BinJson1 = <<"....">>.
 <<"....">>
