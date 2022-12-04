@@ -89,8 +89,8 @@ all_required_tasks_found([] , _Tasks , Level) ->
 all_required_tasks_found([RequiredTask|Tail] , Tasks , Level1) ->
 	case required_task_found(RequiredTask , Tasks) of
 		{true , Level2} ->
-			NewLevel = if (Level1 >= Level2)     -> Level1;
-				   true 		     -> Level2
+			NewLevel = if (Level1 >= Level2) -> Level1;
+				   true 		 -> Level2
 				   end,
 			all_required_tasks_found(Tail , Tasks , NewLevel);
 		_ ->
@@ -126,7 +126,6 @@ task_todo(#task{
 -spec maps_to_records([map()]) -> [#task{}].
 maps_to_records(Maps) ->
 	maps_to_records(Maps , []).
-
 
 
 maps_to_records([] , Records) ->

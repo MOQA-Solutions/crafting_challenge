@@ -1,7 +1,8 @@
 
 # Getting Started
 
-This application represents a proposition to resolve Crafting Software Coding Challenge
+This application represents a proposition to resolve Crafting Software Coding Challenge.<br>
+I have converted `maps` to `records` for more efficiency with fields accessibility.
 
 # API
 
