@@ -27,6 +27,10 @@ start_link() ->
 init([]) ->
 	{ok , ok}.
 
+%%======================================================================%%
+%%			gen_server callback functions 			%%
+%%======================================================================%%
+
 
 handle_call(sort_example , _From , _State) ->
 	Reply = crafting_challenge_utils:sort_data(example),
@@ -68,7 +72,12 @@ terminate(_Reason , _State) ->
 	ok.
 
 
--spec sort_example() -> [#task{}].
+%%=======================================================================%%
+%%		end of gen_server callback functions			 %%
+%%=======================================================================%%
+
+
+-spec sort_example() -> [{#task_todo{} , pos_integer()}].
 sort_example() ->
 	gen_server:call(?MODULE , sort_example).
 
@@ -78,7 +87,7 @@ script_example() ->
 	gen_server:call(?MODULE , script_example).
 
 
--spec sort(nonempty_binary()) -> [#task{}].
+-spec sort(nonempty_binary()) -> [{#task_todo{} , pos_integer()}].
 sort(BinJson) ->
 	gen_server:call(?MODULE , {sort , BinJson}).
 
@@ -86,8 +95,5 @@ sort(BinJson) ->
 -spec script(nonempty_binary()) -> nonempty_binary().
 script(BinJson) ->
 	gen_server:call(?MODULE , {script , BinJson}).
-
-
-
 
  

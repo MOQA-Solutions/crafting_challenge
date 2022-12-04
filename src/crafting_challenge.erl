@@ -10,7 +10,7 @@
 -include("../include/crafting_challenge_data.hrl").
 
 
--spec sort_example() -> [#task{}].
+-spec sort_example() -> [{#task_todo{} , pos_integer()}].
 sort_example() ->
 	crafting_challenge_server:sort_example().
 
@@ -20,7 +20,7 @@ script_example() ->
 	crafting_challenge_server:script_example().
 
 
--spec sort(nonempty_binary()) -> [#task{}].
+-spec sort(nonempty_binary()) -> [{#task_todo{} , pos_integer()}].
 sort(BinJson) ->
 	crafting_challenge_server:sort(BinJson).
 
@@ -28,9 +28,5 @@ sort(BinJson) ->
 -spec script(nonempty_binary()) -> nonempty_binary().
 script(BinJson) ->
 	crafting_challenge_server:script(BinJson).
-
-
-
-
 
 

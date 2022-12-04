@@ -8,7 +8,7 @@
 -include("../include/crafting_challenge_data.hrl").
 
 
--spec sort_data(example | nonempty_binary()) -> [#task{}].
+-spec sort_data(example | nonempty_binary()) -> [{#task_todo{} , pos_integer()}].
 sort_data(example) ->
 	ExampleData = get_example_data(),
 	sort_data(ExampleData);
@@ -32,7 +32,7 @@ generate_bash_script(BinJson) ->
 	generate_script(SortedData).	
 	
 
--spec sort_tasks([#task{}]) -> [#task{}].
+-spec sort_tasks([#task{}]) -> [{#task_todo{} , pos_integer()}].
 sort_tasks(Tasks) ->
 	GroupedTasks = group_tasks(Tasks),
 	Fun = fun({_Task1 , Level1} , {_Task2 , Level2}) ->
@@ -238,8 +238,5 @@ generate_script([{#task_todo{
 			"\n"
 		    >>,
 	generate_script(Tail , NewScript).
-
-
-
 
 
